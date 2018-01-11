@@ -41,10 +41,11 @@ fig, ax = ox.plot_graph(G1)
 import osmnx as ox, geopandas as gpd
 ox.config(log_file=True, log_console=True, use_cache=True)
 # define a point at the corner of California St and Mason St in SF
-location_point = (19.432608, -99.133209)
+#location_point = (19.432608, -99.133209)
+location_point = (-17.1010286,145.7753749)
 
 # create network from point, inside bounding box of N, S, E, W each 750m from point
-G2 = ox.graph_from_point(location_point, distance=10000, distance_type='bbox', network_type='drive')
+G2 = ox.graph_from_point(location_point, distance=5000, distance_type='bbox', network_type='drive')
 G2 = ox.project_graph(G2)
 fig, ax = ox.plot_graph(G2, node_size=30, node_color='#66cc66')
 
